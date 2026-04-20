@@ -21,18 +21,15 @@ app.set("views", "views");
 app.set("view engine", "ejs"); //views folder ichidan o`qiydi
 
 //4ROOTERLAR ./
-app.get("/hello", function (req, res) {
-  // to‘g‘risi "./" emas, "/" bo‘lishi kerak
-  res.end(`<h1 style = "background: pink " > HELLO WORLD by DINA </h1>`);
+app.post("/create-item", (req, res) => {
+  //malumotni ozi bn olib keladi
 });
-
-app.get("/gift", function (req, res) {
-  // to‘g‘risi "./" emas, "/" bo‘lishi kerak
-  res.end(`<h1 style = "background: gray" > you are in gift section </h1>`);
-});
+app.get("/", function (req, res) {
+  res.render("harid");
+}); // databasedan malumot olish uchun
 
 const server = http.createServer(app); //CORE MODULE
-let PORT = 4000;
+let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`server  is running succcesfully ${PORT}`);
 });
