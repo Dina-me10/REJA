@@ -1,7 +1,7 @@
 console.log("web serverni boshlash");
 const express = require("express");
 const app = express();
-const http = require("http"); // to‘g‘rilandi: https emas, http bo‘lishi kerak
+const http = require("http"); 
 
 // 1)KIRISH
 // 1. Static fayllarni xizmat qilish
