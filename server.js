@@ -1,7 +1,18 @@
 console.log("web serverni boshlash");
 const express = require("express");
+const res = require("express");
 const app = express();
-const http = require("http"); 
+const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+  if (err) {
+    console.log("ERROR", err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
 
 // 1)KIRISH
 // 1. Static fayllarni xizmat qilish
@@ -23,6 +34,9 @@ app.set("view engine", "ejs"); //views folder ichidan o`qiydi
 //4ROOTERLAR ./
 app.post("/create-item", (req, res) => {
   //malumotni ozi bn olib keladi
+});
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 app.get("/", function (req, res) {
   res.render("harid");
