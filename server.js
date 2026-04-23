@@ -35,6 +35,10 @@ app.post("/create-item", (req, res) => {
   //malumotni ozi bn olib keladi
 });
 app.get("/author", (req, res) => {
+  // Agar "user" malumoti hali o'qilmagan bo'lsa, xato bermasligi uchun tekshiramiz
+  if (!user) {
+    return res.status(500).send("Database loading... Please refresh.");
+  }
   res.render("author", { user: user });
 });
 app.get("/", function (req, res) {
