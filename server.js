@@ -1,7 +1,17 @@
 console.log("web serverni boshlash");
 const express = require("express");
 const app = express();
-const http = require("http"); // to‘g‘rilandi: https emas, http bo‘lishi kerak
+const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+  if (err) {
+    console.log("ERROR", err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
 
 // 1)KIRISH
 // 1. Static fayllarni xizmat qilish
@@ -21,18 +31,22 @@ app.set("views", "views");
 app.set("view engine", "ejs"); //views folder ichidan o`qiydi
 
 //4ROOTERLAR ./
-app.get("/hello", function (req, res) {
-  // to‘g‘risi "./" emas, "/" bo‘lishi kerak
-  res.end(`<h1 style = "background: pink " > HELLO WORLD by DINA </h1>`);
+app.post("/create-item", (req, res) => {
+  //malumotni ozi bn olib keladi
 });
-
-app.get("/gift", function (req, res) {
-  // to‘g‘risi "./" emas, "/" bo‘lishi kerak
-  res.end(`<h1 style = "background: gray" > you are in gift section </h1>`);
+app.get("/author", (req, res) => {
+  // Agar "user" malumoti hali o'qilmagan bo'lsa, xato bermasligi uchun tekshiramiz
+  if (!user) {
+    return res.status(500).send("Database loading... Please refresh.");
+  }
+  res.render("author", { user: user });
 });
+app.get("/", function (req, res) {
+  res.render("harid");
+}); // databasedan malumot olish uchun
 
 const server = http.createServer(app); //CORE MODULE
-let PORT = 4000;
+let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`server  is running succcesfully ${PORT}`);
 });
