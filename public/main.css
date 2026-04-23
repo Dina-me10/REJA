@@ -1,0 +1,685 @@
+.main_frame {
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+  min-height: 1315px; /* From your Left/Right Menu height */
+  margin: 0 auto;
+  position: relative;
+  background-color: #f0f0f6;
+}
+
+/* LEFT FRAME (The Sidebar) */
+.left_frame {
+  position: relative;
+  width: 305px; /* From your Figma Left Menu */
+  height: 1315px; /* From your Figma Left Menu */
+  background-color: #ffffff;
+  /* We don't need 'left: 0' because Flexbox puts it first */
+}
+/* --- PROFILE CONTAINER (The 228x253 wrapper) --- */
+.left_frame .profile_container {
+  position: relative; /* Fixed from absolute */
+  width: 228px;
+  height: 253px;
+  margin: 40px auto 25px auto; /* Centers it in the sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+/* --- PROFILE IMAGE --- */
+.left_frame .profile_img_box {
+  position: relative;
+  width: 156.16px;
+  height: 150px; /* Adjusted height to keep it circular */
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.left_frame .profile_img_box img {
+  position: relative;
+  width: 150px; /* Make width and height equal for a perfect circle */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* This prevents the image from stretching */
+  border: 2px solid #f0f0f6; /* Optional: adds a light border like the design */
+}
+
+/* --- NAME (Marcos) --- */
+.left_frame .profile_name {
+  position: relative;
+  width: 64px;
+  height: 20.85px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 123.6%;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+}
+
+/* --- JOB TITLE (Software Engineer) --- */
+.left_frame .profile_job {
+  position: relative;
+  width: 147.84px;
+  height: 24.31px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: capitalize;
+  font-feature-settings:
+    "calt" off,
+    "kern" off;
+  color: #767676;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* --- SOCIAL ICONS ROW --- */
+.left_frame .social_icons_row {
+  position: relative;
+  width: 228px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spacing between circles */
+}
+
+.left_frame .social_icon {
+  position: relative;
+  width: 24.99px;
+  height: 21.61px;
+  background-color: #ffb400;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2b2b2b;
+  font-size: 12px;
+}
+
+/* --- DIVIDER LINE --- */
+.left_frame .line_6 {
+  position: relative; /* Changed from absolute to maintain flow */
+  width: 220px;
+  height: 0px;
+
+  /* Horizontal centering */
+  margin: 0 auto;
+
+  /* Applying your Figma border style */
+  border: 1.5px solid #f0f0f6;
+}
+/* --- ABOUT SECTION WRAPPER --- */
+.left_frame .about_container {
+  position: relative;
+  width: 221px; /* From your Figma "About" spec */
+  height: auto; /* Let it grow with content */
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 9px; /* This handles the spacing between the 25px high rows */
+}
+
+/* --- THE ROW --- */
+.left_frame .about_row {
+  position: relative;
+  width: 100%;
+  height: 25px; /* From your Figma "Age" group spec */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- LABELS (Age, Residence, etc.) --- */
+.left_frame .about_label {
+  position: relative;
+  /* Removed absolute width to allow text to fit, but kept the style */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: capitalize;
+  font-feature-settings:
+    "calt" off,
+    "kern" off;
+  color: #2b2b2b;
+
+  /* If you want the yellow background from the design: */
+  background: #ffb400;
+  padding: 0 5px;
+}
+
+/* --- VALUES (24, S.Korea, etc.) --- */
+.left_frame .about_value {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: right;
+  text-transform: capitalize;
+  font-feature-settings:
+    "calt" off,
+    "kern" off;
+  color: #2b2b2b;
+}
+
+/* --- THE DIVIDER LINE --- */
+.left_frame .line_3 {
+  position: relative;
+  width: 220px;
+  height: 0px;
+  margin: 20px auto;
+  border: 1.5px solid #f0f0f6;
+}
+/* --- LANGUAGES CONTAINER --- */
+/* --- LANGUAGES SECTION --- */
+.left_frame .languages_container {
+  position: relative;
+  width: 220px;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between Uzbek, Korean, and English rows */
+}
+
+.left_frame .languages_title {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #2b2b2b;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.left_frame .lang_info {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.left_frame .lang_name,
+.lang_percent {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #767676;
+}
+
+/* --- THE PROGRESS BAR (Hollow/Yellow Design) --- */
+.left_frame .lang_bar_wrapper {
+  position: relative;
+  width: 100%;
+  height: 4px; /* Figma height */
+  background: #ffffff; /* White background inside the bar */
+  border: 1.5px solid #ffb400; /* The yellow outline */
+  border-radius: 10px;
+  padding: 1px; /* Creates the white gap between border and fill */
+  box-sizing: border-box; /* Keeps the border from making the bar too wide */
+}
+
+.left_frame .lang_bar_fill {
+  position: relative;
+  height: 100%;
+  background: #ffb400; /* The yellow progress fill */
+  border-radius: 10px;
+}
+
+/* --- DIVIDER LINE 4 --- */
+.left_frame .line_4 {
+  position: relative;
+  width: 220px;
+  height: 0px;
+  margin: 20px auto;
+  border: 1.5px solid #f0f0f6;
+}
+/* --- SKILLS SECTION --- */
+.left_frame .skills_container {
+  position: relative;
+  width: 220px;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.left_frame .skills_title {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #2b2b2b;
+  text-align: left; /* Keeps "Skills" on the left */
+  margin-bottom: 5px;
+}
+
+.left_frame .skill_item {
+  position: relative;
+  width: 100%;
+}
+
+.left_frame .skill_info {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.left_frame .skill_name,
+.skill_percent {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #767676;
+}
+
+/* --- THE SKILL BAR (Hollow/Yellow Design) --- */
+.left_frame .skill_bar_wrapper {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: #ffffff;
+  border: 1.5px solid #ffb400; /* Matching your picture */
+  border-radius: 10px;
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+.left_frame .skill_bar_fill {
+  position: relative;
+  height: 100%;
+  background: #ffb400;
+  border-radius: 10px;
+}
+
+/* --- DIVIDER LINE 5 --- */
+.left_frame.line_5 {
+  position: relative;
+  width: 220px;
+  height: 0px;
+  margin: 20px auto;
+  border: 1.5px solid #f0f0f6;
+}
+/* --- EXTRA SKILLS SECTION --- */
+.left_frame .extra_skills_container {
+  position: relative;
+  width: 186px; /* Your Figma spec */
+  height: auto; /* Let it grow naturally */
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Vertical spacing between items */
+}
+
+.left_frame .extra_skills_title {
+  position: relative;
+  width: 94px; /* Your Figma spec */
+  height: 22px;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 123.6%;
+  text-transform: capitalize;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.left_frame.extra_skill_item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between the icon and the text */
+}
+
+.left_frame .extra_icon {
+  width: 15px; /* Your Figma spec */
+  height: 15px;
+  object-fit: contain;
+}
+
+.left_frame.extra_skill_text {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: capitalize;
+  font-feature-settings:
+    "calt" off,
+    "kern" off;
+  color: #767676;
+}
+
+/* --- DIVIDER LINE 6 --- */
+.left_frame .line_6 {
+  position: relative;
+  width: 220px;
+  height: 0px;
+  margin: 20px auto;
+  border: 1.5px solid #f0f0f6;
+}
+/* --- MIDDLE FRAME (The Content Area) --- */
+.middle_frame {
+  position: relative;
+  flex: 1;
+  background-color: #f0f0f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+/* --- THE BANNER (TOP) --- */
+.middle_frame .main_menu_container {
+  position: relative;
+  width: 971px;
+  height: 463px;
+  background: #ffffff;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 40px; /* Space between Sections */
+}
+
+/* --- HERO TEXT --- */
+/* FIXED: This wrapper keeps everything on the left */
+.hero_text_content {
+  position: absolute;
+  left: 60px;
+  top: 93px;
+  width: 500px;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keeps text left-aligned */
+}
+
+/* Remove 'position: absolute' from these individual items */
+.middle_frame .hero_main_title {
+  position: relative;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #2b2b2b;
+  margin: 0 0 15px 0;
+}
+
+.middle_frame .yellow_text {
+  color: #ffb400;
+}
+
+.middle_frame .hero_sub_paragraph {
+  position: relative;
+  width: 424px;
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 24px;
+  color: #767676;
+  margin: 0 0 25px 0;
+}
+
+.middle_frame .hire_me_button {
+  position: relative;
+  width: 154px;
+  height: 51px;
+  background: #ffb400;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.middle_frame .btn_icon {
+  width: 16px;
+  height: auto;
+}
+
+/* --- IMAGE & SHAPES --- */
+.middle_frame .hero_person_img {
+  position: absolute;
+  left: 60.07%;
+  bottom: 0%;
+  z-index: 5;
+}
+
+.middle_frame .steve_large {
+  height: 450px;
+  display: block;
+}
+
+.middle_frame .shape {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.middle_frame .ellipse_12 {
+  left: 53.2%;
+  top: 12.8%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(5, 255, 0, 0.8);
+  border-radius: 50%;
+}
+.middle_frame .ellipse_16 {
+  left: 8.66%;
+  top: 90.53%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(5, 255, 0, 0.8);
+  border-radius: 50%;
+}
+.middle_frame .ellipse_13 {
+  left: 57.1%;
+  top: 81.7%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 180, 0, 0.8);
+  border-radius: 50%;
+}
+.middle_frame .ellipse_15 {
+  left: 3.71%;
+  top: 8.18%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 180, 0, 0.8);
+  border-radius: 50%;
+}
+.middle_frame .rect_51 {
+  left: 91.9%;
+  top: 16.51%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 180, 0, 0.8);
+  transform: rotate(25deg);
+}
+.middle_frame .poly_1 {
+  left: 94.54%;
+  top: 91.58%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 46, 0, 0.8);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* --- SERVICES SECTION --- */
+.middle_frame .services_container {
+  position: relative;
+  width: 970px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle_frame .services_header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.middle_frame .services_title {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 32px;
+  color: #2b2b2b;
+  margin-bottom: 25px;
+}
+
+.middle_frame .services_subtitle {
+  width: 438px;
+  font-family: "Inter";
+  font-size: 15px;
+  line-height: 24px;
+  color: #767676;
+}
+
+/* --- GRID & CARDS --- */
+.middle_frame .services_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 310px);
+  gap: 20px;
+}
+
+.middle_frame .service_card {
+  width: 310px;
+  height: 225px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.middle_frame .service_icon {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 15px;
+}
+
+.middle_frame .service_card h4 {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.middle_frame .service_card p {
+  font-family: "Inter";
+  font-size: 15px;
+  line-height: 24px;
+  text-align: center;
+  color: #767676;
+}
+
+.middle_frame .order_link {
+  margin-top: 8px;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 12px;
+  color: #ffb400;
+  text-decoration: none;
+}
+/* RIGHT FRAME (The Nav Icons) */
+/* --- RIGHT SIDEBAR CONTAINER --- */
+.right_frame {
+  width: 108px;
+  min-height: 1315px; /* From your Figma height */
+  background: #fafafa;
+  box-shadow: 4px 0px 10px rgba(47, 122, 249, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+/* --- CONTRAST ICON (Top) --- */
+.contrast_icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 174px; /* Space until the menu starts at 254px */
+  cursor: pointer;
+}
+
+.contrast_icon img {
+  width: 100%;
+}
+
+/* --- MENU NAVIGATION --- */
+.side_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 43px; /* Vertical spacing between menu items */
+}
+
+.nav_group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CIRCLE BUTTONS --- */
+.nav_item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.circle_yellow {
+  background: #ffb400;
+}
+.circle_gray {
+  background: #f0f0f6;
+}
+
+.nav_item img {
+  width: 18px;
+  height: auto;
+}
+
+/* --- TOOLTIP (The "Home" Black Label) --- */
+.tooltip {
+  background: #2b2b2b;
+  color: #ffffff;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px; /* Positioned above the circle */
+  white-space: nowrap;
+  opacity: 0; /* Hidden by default */
+  transition: 0.3s;
+}
+
+/* Show tooltip for Active or Hovered items */
+.nav_group.active .tooltip,
+.nav_group:hover .tooltip {
+  opacity: 1;
+}
+
+/* Hover Effect */
+.nav_item:hover {
+  background: #ffb400;
+}

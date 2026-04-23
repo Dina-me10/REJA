@@ -1,6 +1,5 @@
 console.log("web serverni boshlash");
 const express = require("express");
-const res = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
