@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reja va Maqsadlar</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .btn {
+        border-radius: 20px;
+      }
+      .form-container {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">REJA VA MAQSADLAR</h1>
+
+      <form
+        id="create-form"
+        action="/create-item"
+        method="POST"
+        class="form-container"
+      >
+        <input
+          id="create-field"
+          name="item"
+          type="text"
+          class="form-control mr-3"
+          style="flex: 1"
+          autocomplete="off"
+          autofocus
+        />
+        <button class="btn btn-primary">Yangi Reja qo'shish</button>
+      </form>
+
+      <button id="clean-all" class="btn btn-danger mt-3">
+        Hamma Rejani ochirish
+      </button>
+    </div>
+  </body>
+</html>
