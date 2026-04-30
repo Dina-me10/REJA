@@ -1,4 +1,18 @@
-//MIT TASK 1
+function countDigits(str) {
+  let count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= "0" && str[i] <= "9") {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countDigits("student id 2022790157"));
+
+/*MIT-TASK 1
 function countLetter(letter, word) {
   let count = 0;
 
@@ -15,7 +29,7 @@ function countLetter(letter, word) {
 }
 
 const result = countLetter("a", "Madina");
-console.log(result);
+console.log(result); */
 
 //const list = [
 // "yahshi talaba boling", // 0-20
