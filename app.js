@@ -41,6 +41,25 @@ app.post("/delete-item", (req, res) => {
     },
   );
 });
+// Qavs ichiga (req, res) qo'shing
+app.post("/edit-item", async (req, res) => {
+  const data = req.body;
+  console.log(data);
+
+  try {
+    await db
+      .collection("plans")
+      .findOneAndUpdate(
+        { _id: new mongodb.ObjectId(data.id) },
+        { $set: { reja: data.new_input } },
+      );
+
+    res.json({ state: "success" });
+  } catch (err) {
+    console.log("Xatolik yuz berdi:", err);
+    res.status(500).json({ state: "error", message: "Serverda xatolik" });
+  }
+});
 
 app.get("/author", (req, res) => {
   // Agar "user" malumoti hali o'qilmagan bo'lsa, xato bermasligi uchun tekshiramiz
@@ -49,6 +68,15 @@ app.get("/author", (req, res) => {
   }
   res.render("author", { user: user });
 });
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function () {
+      res.json({ state: "hamma rejalar ochirildi" });
+    });
+  }
+});
+
 app.get("/", function (req, res) {
   console.log("user entered /");
   db.collection("plans")
