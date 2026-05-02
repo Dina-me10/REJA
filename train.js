@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 //MIT-TASK B
 function countDigits(str) {
+=======
+//MIT TASK B 
+  function countDigits(str) {
+>>>>>>> d09dba5aec513ffcf04db10dc5d239fbefa3d30f
   let count = 0;
 
   for (let i = 0; i < str.length; i++) {
