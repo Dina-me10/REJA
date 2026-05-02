@@ -1,10 +1,63 @@
-<<<<<<< HEAD
+//MIT Task C
+class Shop {
+  constructor(salat, osh, cola) {
+    this.salat = salat;
+    this.osh = osh;
+    this.cola = cola;
+  }
+
+  getCurrentTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    return `${hours}:${minutes}`;
+  }
+
+  qoldiq() {
+    const time = this.getCurrentTime();
+    console.log(
+      `Hozir ${time}da ${this.salat}ta salat, ${this.osh}ta osh va ${this.cola}ta cola mavjud!`,
+    );
+  }
+
+  sotish(mahsulot, miqdor) {
+    if (this[mahsulot] !== undefined) {
+      if (this[mahsulot] >= miqdor) {
+        this[mahsulot] -= miqdor;
+      } else {
+        console.log(`Xato: Omborxonada yetarli ${mahsulot} yo'q!`);
+      }
+    } else {
+      console.log(`Xato: Bizda ${mahsulot} sotilmaydi.`);
+    }
+  }
+
+  qabul(mahsulot, miqdor) {
+    if (this[mahsulot] !== undefined) {
+      this[mahsulot] += miqdor;
+    } else {
+      console.log(`Xato: ${mahsulot} bizning ro'yxatda mavjud emas.`);
+    }
+  }
+}
+
+// ISHLATILISHI:
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+
+shop.sotish("salat", 3);
+shop.qabul("osh", 4);
+
+shop.qoldiq();
+
+/*
 //MIT-TASK B
 function countDigits(str) {
-=======
-//MIT TASK B 
+
+//MIT-TASK B 
   function countDigits(str) {
->>>>>>> d09dba5aec513ffcf04db10dc5d239fbefa3d30f
+
   let count = 0;
 
   for (let i = 0; i < str.length; i++) {
@@ -16,7 +69,7 @@ function countDigits(str) {
   return count;
 }
 
-console.log(countDigits("student id 2022790157"));
+console.log(countDigits("student id 2022790157")); */
 
 /*MIT-TASK A
 function countLetter(letter, word) {
