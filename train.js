@@ -1,3 +1,4 @@
+//MIT-TASK B
 function countDigits(str) {
   let count = 0;
 
@@ -12,7 +13,7 @@ function countDigits(str) {
 
 console.log(countDigits("student id 2022790157"));
 
-/*MIT-TASK 1
+/*MIT-TASK A
 function countLetter(letter, word) {
   let count = 0;
 
@@ -40,7 +41,7 @@ console.log(result); */
 // "endi dam oling, foydasi yoq endi", // 60+
 //];
 
-//CALBACK FUNCTIONS
+//CALBACK-FUNCTIONS
 
 //function maslahatBering(a, callback) {
 // if (typeof a !== "number") callback("insert a number", null);
@@ -68,7 +69,7 @@ console.log(result); */
 
 //nsole.log("passed here 1");
 
-//ASYNC FUNCIONS
+//ASYNC-FUNCIONS
 // async function maslahatBering(a) {
 //     if (typeof a !== "number") throw new Error("insert a number");
 //     else if (a <= 20) return list[0];
