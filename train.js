@@ -1,4 +1,22 @@
-//MIT Task C
+//MIT TASK D
+function tarkibniTekshir(text1, text2) {
+  if (text1.length !== text2.length) {
+    return false;
+  }
+  const tartibli1 = text1.split("").sort().join("");
+  const tartibli2 = text2.split("").sort().join("");
+  //split(""): So'zni harflarga bo'laklaydi.
+  //sort(): Harflarni alifbo tartibida tizadi.
+  //join(""): Harflarni qaytadan birlashtiradi.
+
+  return tartibli1 === tartibli2;
+}
+
+console.log(tarkibniTekshir("madina", "dianam"));
+console.log(tarkibniTekshir("mitguruh", "guruhmit"));
+console.log(tarkibniTekshir("olma", "anor"));
+
+/* MIT-Task C
 class Shop {
   constructor(salat, osh, cola) {
     this.salat = salat;
@@ -41,7 +59,7 @@ class Shop {
   }
 }
 
-// ISHLATILISHI:
+//
 const shop = new Shop(4, 5, 2);
 
 shop.qoldiq();
@@ -49,7 +67,7 @@ shop.qoldiq();
 shop.sotish("salat", 3);
 shop.qabul("osh", 4);
 
-shop.qoldiq();
+shop.qoldiq(); */
 
 /*
 //MIT-TASK B

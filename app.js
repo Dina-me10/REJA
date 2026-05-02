@@ -11,23 +11,24 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
     user = JSON.parse(data);
   }
 });
+
 //MONGO-call
 const db = require("./server").db();
 const mongodb = require("mongodb");
+
 // 1)KIRISH
-// 1. Static fayllarni xizmat qilish
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.set("views", "views");
 app.set("view engine", "ejs");
+
 //4ROOTERLAR ./
 app.post("/create-item", (req, res) => {
   console.log("user entered /create-item");
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-    console.log(data.ops);
     res.json(data.ops[0]);
   });
 });
@@ -41,7 +42,7 @@ app.post("/delete-item", (req, res) => {
     },
   );
 });
-// Qavs ichiga (req, res) qo'shing
+
 app.post("/edit-item", async (req, res) => {
   const data = req.body;
   console.log(data);
@@ -62,17 +63,17 @@ app.post("/edit-item", async (req, res) => {
 });
 
 app.get("/author", (req, res) => {
-  // Agar "user" malumoti hali o'qilmagan bo'lsa, xato bermasligi uchun tekshiramiz
   if (!user) {
     return res.status(500).send("Database loading... Please refresh.");
   }
   res.render("author", { user: user });
 });
 
+// Xatolik to'g'rilangan qism: deleteMany ichiga {} va callback funksiya to'g'ri yozildi
 app.post("/delete-all", (req, res) => {
   if (req.body.delete_all) {
-    db.collection("plans").deleteMany(function () {
-      res.json({ state: "hamma rejalar ochirildi" });
+    db.collection("plans").deleteMany({}, (err, data) => {
+      res.json({ state: "hamma rejalar o'chirildi" });
     });
   }
 });
@@ -86,10 +87,9 @@ app.get("/", function (req, res) {
         console.log(err);
         res.end("something went wrong");
       } else {
-        console.log(data);
         res.render("reja", { items: data });
       }
     });
-}); // databasedan malumot olish uchun
+});
 
 module.exports = app;
