@@ -1,4 +1,14 @@
-//MIT TASK D
+// MIT TASK E
+function getReverse(word) {
+  const reversed = word.toLowerCase().split("").reverse().join("");
+
+  console.log(reversed);
+  return reversed;
+}
+
+getReverse("hello");
+
+/* MIT-TASK D
 function tarkibniTekshir(text1, text2) {
   if (text1.length !== text2.length) {
     return false;
@@ -14,7 +24,7 @@ function tarkibniTekshir(text1, text2) {
 
 console.log(tarkibniTekshir("madina", "dianam"));
 console.log(tarkibniTekshir("mitguruh", "guruhmit"));
-console.log(tarkibniTekshir("olma", "anor"));
+console.log(tarkibniTekshir("olma", "anor")); */
 
 /* MIT-Task C
 class Shop {
