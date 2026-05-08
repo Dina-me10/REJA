@@ -1,4 +1,21 @@
-// MIT TASK E
+//MIT TASK F
+function findDoublers(names) {
+  let words = [];
+
+  for (let letters of names) {
+    if (words.includes(letters)) {
+      return true;
+    }
+    words.push(letters);
+  }
+
+  return false;
+}
+
+console.log(findDoublers("Madiina"));
+console.log(findDoublers("dina"));
+
+/* MIT-TASK E
 function getReverse(word) {
   const reversed = word.toLowerCase().split("").reverse().join("");
 
@@ -7,7 +24,7 @@ function getReverse(word) {
 }
 
 getReverse("hello");
-
+*/
 /* MIT-TASK D
 function tarkibniTekshir(text1, text2) {
   if (text1.length !== text2.length) {
