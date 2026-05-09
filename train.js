@@ -1,19 +1,21 @@
-//MIT TASK F
-function findDoublers(names) {
-  let words = [];
+// MIT TASK F
 
-  for (let letters of names) {
-    if (words.includes(letters)) {
-      return true;
+function findDoublers(word) {
+  const wordL = word.toLowerCase();
+
+  for (let i = 0; i < wordL.length; i++) {
+    for (let j = i + 1; j < wordL.length; j++) {
+      if (wordL[i] === wordL[j]) {
+        return true;
+      }
     }
-    words.push(letters);
   }
 
   return false;
 }
 
-console.log(findDoublers("Madiina"));
-console.log(findDoublers("dina"));
+console.log(findDoublers("HELLO"));
+console.log(findDoublers("DINA"));
 
 /* MIT-TASK E
 function getReverse(word) {
