@@ -1,4 +1,15 @@
-// MIT TASK F
+//MIT TASK G
+function getHighestIndex(arr) {
+  let max = Math.max(...arr);
+
+  return arr.indexOf(max);
+}
+
+const result = getHighestIndex([10, 11, 12, 3, 4, 5]);
+
+console.log(result);
+
+/* MIT-TASK F
 
 function findDoublers(word) {
   const wordL = word.toLowerCase();
@@ -15,7 +26,7 @@ function findDoublers(word) {
 }
 
 console.log(findDoublers("HELLO"));
-console.log(findDoublers("DINA"));
+console.log(findDoublers("DINA")); */
 
 /* MIT-TASK E
 function getReverse(word) {
