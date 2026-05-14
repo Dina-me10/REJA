@@ -1,4 +1,15 @@
-//MIT TASK G
+//MIT TASK H
+const getPositive = (numbers) => {
+  return numbers
+    .filter((n) => n > 0)
+    .map(String)
+    .join("");
+};
+
+console.log(getPositive([1, -4, 2]));
+console.log(getPositive([-5, 0, 10, 3]));
+
+/* MIT TASK G
 function getHighestIndex(arr) {
   let max = Math.max(...arr);
 
@@ -7,7 +18,7 @@ function getHighestIndex(arr) {
 
 const result = getHighestIndex([10, 11, 12, 3, 4, 5]);
 
-console.log(result);
+console.log(result); */
 
 /* MIT-TASK F
 
