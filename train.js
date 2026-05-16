@@ -1,4 +1,15 @@
-//MIT TASK H
+//MIT TASK I
+function majorityElement(arr) {
+  const count = {};
+  arr.forEach((val) => (count[val] = (count[val] || 0) + 1));
+
+  return Object.keys(count).sort((a, b) => count[b] - count[a])[0];
+}
+
+// Tekshirish:
+console.log(majorityElement([10, 7, 45, 10, 67, 21, 52]));
+
+/*MIT TASK H
 const getPositive = (numbers) => {
   return numbers
     .filter((n) => n > 0)
@@ -7,7 +18,7 @@ const getPositive = (numbers) => {
 };
 
 console.log(getPositive([1, -4, 2]));
-console.log(getPositive([-5, 0, 10, 3]));
+console.log(getPositive([-5, 0, 10, 3])); */
 
 /* MIT TASK G
 function getHighestIndex(arr) {
