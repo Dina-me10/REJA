@@ -1,4 +1,10 @@
-//MIT TASK I
+//MIT TASK J
+const findLongestWord = (str) =>
+  str.split(" ").sort((a, b) => b.length - a.length)[0];
+
+console.log(findLongestWord("Among all BMW car models  i like X7  "));
+
+/*MIT TASK I
 function majorityElement(arr) {
   const count = {};
   arr.forEach((val) => (count[val] = (count[val] || 0) + 1));
@@ -6,8 +12,7 @@ function majorityElement(arr) {
   return Object.keys(count).sort((a, b) => count[b] - count[a])[0];
 }
 
-// Tekshirish:
-console.log(majorityElement([10, 7, 45, 10, 67, 21, 52]));
+console.log(majorityElement([10, 7, 45, 10, 67, 21, 52])); */
 
 /*MIT TASK H
 const getPositive = (numbers) => {
