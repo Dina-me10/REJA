@@ -1,4 +1,13 @@
-//MIT TASK K
+//MIT task L
+function reverseSentence(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
+}
+console.log(reverseSentence("we like coding!"));
+
+/*MIT TASK K
 function countVowels(str) {
   const matches = str.match(/[aeiou]/gi);
 
@@ -9,7 +18,7 @@ console.log(countVowels("Madina"));
 console.log(countVowels("I love programmming"));
 console.log(countVowels("dreams come true!!!"));
 console.log(countVowels("fly"));
-
+*/
 /*MIT TASK J
 const findLongestWord = (str) =>
   str.split(" ").sort((a, b) => b.length - a.length)[0];
